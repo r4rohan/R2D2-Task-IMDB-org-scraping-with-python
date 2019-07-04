@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container">
+            <span class="navbar-brand mb-0 h1">Internship</span>
+        </div>
+    </nav>
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="text-center">
+                Intership Project
+            </h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="col-md-4">
+            <input type="text" class="form-control" id="search">
+            <ul id="movies-results"></ul>
+        </div>
+    </div>
+
+    <script>
+        var result = document.getElementById("movies-results");
+        document.getElementById("search").addEventListener("keyup", function (e) {
+            var url = "http://127.0.0.1:5000/autocomplete"
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify({
+                name: e.target.value
+            }));
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    result.innerHTML = getList(this.responseText);
+                }
+            };
+        })
+        function getList(res) {
+            out = "";
+            res = JSON.parse(res);
+            res.forEach(element => {
+                out += ("<li>" + element['name'] + "</li>");
+            });
+            return out
+        }
+    </script>
+</body>
+
+</html>
