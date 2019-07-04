@@ -2,7 +2,7 @@
 
 Scraping IMDB Org with Python and Django using API key. ScrapeD IMDB website for Names, Rating and cast of atleast 1000 movies.
 
-Api which is used:
+Api which is used: <br>
  GET: /autocomplete
  given a search input prefix, display movie names that start with
 prefix,
