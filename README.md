@@ -3,7 +3,7 @@
 Scraping IMDB Org with Python and Flask using API key. ScrapeD IMDB website for Names, Rating and cast of atleast 1000 movies.
 
 ***Api which is used:*** <br><br>
- `GET: /autocomplete`
+ `GET: /autocomplete`<br>
  `given a search input prefix, display movie names that start with prefix, sorted by rating.`
 
  Example:
