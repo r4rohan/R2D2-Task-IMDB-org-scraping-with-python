@@ -9,8 +9,8 @@ Scraping IMDB Org with Python and Flask using API key. ScrapeD IMDB website for 
  Example:
  prefix = avg
  Response ::
- 1. avengers
- 2. avengers endgame`
+ 1. avengers`
+ `2. avengers endgame`
 
  `PARAMETERS:
  prefix : input query [MUST]
@@ -19,7 +19,7 @@ Scraping IMDB Org with Python and Flask using API key. ScrapeD IMDB website for 
 position (default : 0)
 
  GET: /movies/<movie_id>
- given a movie_id return details of the movie like, name, cast and rating
+ given a movie_id return details of the movie like, name, cast and rating`
 
 
 #####Used production read DB
